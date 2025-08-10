@@ -49,7 +49,7 @@ export default function AboutSection() {
                 technology and creativity.
                 <br /> <br />
                 Most of my professional experience comes from working in
-                <b>startups</b>, where I’ve learned to adapt quickly, wear many
+                <b> startups</b>, where I’ve learned to adapt quickly, wear many
                 hats, and tackle challenging problems head-on. I have a special
                 interest in <b>cybersecurity, accessibility, and gaming</b>, and
                 I love exploring new technologies that <b>push boundaries.</b>{" "}

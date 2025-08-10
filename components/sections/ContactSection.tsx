@@ -63,7 +63,12 @@ const ContactSection: React.FC = () => {
           <p className="text-title font-light">
             SPRING + SUMMER 2026
             <br />
-            SWE INTERNSHIPS + NEW GRAD
+            SWE INTERNSHIPS
+            <br />
+            <br />
+            SUMMER + FALL 2026
+            <br />
+            SWE NEW GRAD
           </p>
         </div>
       </div>

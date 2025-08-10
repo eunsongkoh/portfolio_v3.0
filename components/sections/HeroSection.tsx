@@ -43,13 +43,13 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
           >
             <Button
               onClick={() => scrollToSection("projects")}
-              className="px-12 py-6 bg-transparent border border-foreground text-foreground font-mono text-xs tracking-widest uppercase transition-all duration-500 hover:bg-foreground hover:text-background hover:scale-105"
+              className="px-12 py-6  bg-transparent border border-foreground text-foreground font-mono text-xs tracking-widest uppercase transition-all duration-500 hover:bg-foreground hover:text-background hover:scale-105 hover:shadow-[0_0_10px_#00ffff]"
             >
               VIEW WORK
             </Button>
             <Button
               onClick={() => scrollToSection("contact")}
-              className="px-12 py-6 bg-transparent border border-foreground text-foreground font-mono text-xs tracking-widest uppercase transition-all duration-500 hover:bg-foreground hover:text-background hover:scale-105"
+              className="px-12 py-6  bg-transparent border border-foreground text-foreground font-mono text-xs tracking-widest uppercase transition-all duration-500 hover:bg-foreground hover:text-background hover:scale-105 hover:shadow-[0_0_10px_#00ffff]"
             >
               GET IN TOUCH
             </Button>

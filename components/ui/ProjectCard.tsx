@@ -17,11 +17,11 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div
-      className="surface p-10 font-mono hover:bg-hover transition-all duration-500 group card-3d animate-fade-up cursor-pointer border border-foreground"
+      className="surface p-10 font-mono hover:bg-hover transition-all duration-500 group card-3d animate-fade-up cursor-pointer border border-foreground shadow-[0_0_10px_#ffffff] hover:bg-foreground hover:text-background hover:scale-105 hover:shadow-[0_0_10px_#00ffff]"
       style={{ animationDelay: `${delay}s` }}
     >
       <div className="flex justify-between items-start mb-6">
-        <h3 className="text-mono font-medium text-accent-gunmetal group-hover:text-foreground transition-colors duration-300">
+        <h3 className="text-mono font-medium text-accent-gunmetal transition-colors duration-300">
           {title}
         </h3>
         {url && (
