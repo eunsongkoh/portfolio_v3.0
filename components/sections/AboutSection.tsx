@@ -1,7 +1,6 @@
 import Image from "next/image";
 import FlipCard from "../ui/FlipCard";
 import { Slide } from "react-awesome-reveal";
-import Galaxy from "../ui/Galaxy";
 
 export default function AboutSection() {
   const news = [
@@ -28,14 +27,6 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative py-32 bg-surface overflow-hidden">
-      <Galaxy
-        mouseRepulsion={true}
-        mouseInteraction={true}
-        density={1.5}
-        glowIntensity={0.5}
-        saturation={0.8}
-        hueShift={240}
-      />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start w-full">
           <Slide direction="down" cascade>

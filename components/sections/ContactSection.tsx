@@ -11,7 +11,7 @@ const ContactSection: React.FC = () => {
           className="text-body text-muted-foreground mb-16 max-w-3xl mx-auto animate-fade-up leading-loose"
           style={{ animationDelay: "0.3s" }}
         >
-          I'm always down to chat about new opportunities, projects, or
+          I&apos;m always down to chat about new opportunities, projects, or
           collaborations!
         </p>
 
