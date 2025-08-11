@@ -35,11 +35,11 @@ export default function AboutSection() {
               <div className="w-64 h-64 sm:w-80 sm:h-80 bg-gradient-to-br from-accent-warm to-accent-chrome mb-8 relative overflow-hidden rounded-xl">
                 <div className="w-full h-full bg-gradient-to-br from-accent-silver/30 to-accent-gunmetal/30 flex items-center justify-center rounded-xl">
                   <Image
-                    src="/images/song.jpg"
+                    src="/images/sng.jpg"
                     alt="Description"
                     fill
-                    style={{ objectFit: "cover" }}
-                    className="brightness-110 rounded-xl"
+                    style={{ objectFit: "contain" }}
+                    className="brightness-90 rounded-xl"
                   />
                 </div>
               </div>
