@@ -42,10 +42,10 @@ export default function HeroSection({ scrollToSection }: HeroSectionProps) {
             style={{ animationDelay: "0.6s" }}
           >
             <Button
-              onClick={() => scrollToSection("projects")}
+              onClick={() => scrollToSection("experience")}
               className="px-12 py-6  bg-transparent border border-foreground text-foreground font-mono text-xs tracking-widest uppercase transition-all duration-500 hover:bg-foreground hover:text-background hover:scale-105 hover:shadow-[0_0_10px_#00ffff]"
             >
-              VIEW WORK
+              VIEW EXPERIENCE
             </Button>
             <Button
               onClick={() => scrollToSection("contact")}

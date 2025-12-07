@@ -4,12 +4,22 @@ import { Slide } from "react-awesome-reveal";
 const ExperienceSection: React.FC = () => {
   const experiences = [
     {
+      role: "Applied Research Engineer (AI & Security)",
+      company: "Safety Cybersecurity",
+      period: "Jan 2026",
+      location: "Vancouver, BC",
+      description: "• Incoming Applied Research Engineer",
+      techstack: "",
+      logoSrc: "/images/safetycli_logo.jpg",
+    },
+    {
       role: "Software Engineer Intern",
       company: "Safety Cybersecurity",
-      period: "Apr 2025 — Present",
+      period: "Apr 2025 — Dec 2025",
       location: "Vancouver, BC",
-      description: "• Date Engine Team",
-      techstack: "Python, HuggingFace, LangChain, BERT",
+      description: "• Date Engine Team - AI/ML Security R&D",
+      techstack:
+        "React, Distributed Training, HuggingFace, LangSmith/LangChain, BERT",
       logoSrc: "/images/safetycli_logo.jpg",
     },
     {
@@ -18,7 +28,7 @@ const ExperienceSection: React.FC = () => {
       period: "Apr 2025 — Aug 2025",
       location: "Vancouver, BC",
       description:
-        "• Assisting in Automated Vulnerability Discovery research under Dr.Steven Ko",
+        "• Co-authoured a paper in Automated Vulnerability Discovery research under Dr.Steven Ko",
       techstack: "Rust, Python, Prompt Engineering",
       logoSrc: "/images/sfu.png",
     },

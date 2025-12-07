@@ -61,12 +61,12 @@ const ContactSection: React.FC = () => {
             CURRENTLY AVAILABLE FOR
           </p>
           <p className="text-title font-light">
-            SPRING + SUMMER 2026
+            SUMMER 2026
             <br />
             SWE INTERNSHIPS
             <br />
             <br />
-            SUMMER + FALL 2026
+            SUMMER 2027
             <br />
             SWE NEW GRAD
           </p>

@@ -43,22 +43,33 @@ export default function AboutSection() {
                   />
                 </div>
               </div>
-              <p className="text-body text-center font-mono text-xs lg:text-left leading-loose text-muted-foreground">
-                I’m a third-year <b>Computer Science</b> student at{" "}
-                <b>Simon Fraser University</b> with a passion for blending
-                technology and creativity.
-                <br /> <br />
-                Most of my professional experience comes from working in
-                <b> startups</b>, where I’ve learned to adapt quickly, wear many
-                hats, and tackle challenging problems head-on. I have a special
-                interest in <b>cybersecurity, accessibility, and gaming</b>, and
-                I love exploring new technologies that <b>push boundaries.</b>{" "}
-                <br />
-                <br />
-                Outside of coding, you’ll often find me editing videos, DJing,
-                or working on creative projects that bring ideas to life!
-                <br />
-              </p>
+              <ul className="list-disc font-mono text-xs list-inside mt-2 space-y-2 text-muted-foreground">
+                <li>
+                  🎓 Fourth-year <b>Computer Science</b> student at{" "}
+                  <b>Simon Fraser University</b>, graduating Spring 2027
+                </li>
+                <li>
+                  💼 Incoming <b>Applied Research Engineer</b> at Safety
+                  Cybersecurity
+                </li>
+                <li>
+                  🚀 Experience working in <b>startups</b>, learning to adapt
+                  quickly, wear many hats, and tackle challenging problems
+                </li>
+                <li>
+                  🔬 Research experience in <b>cybersecurity and AI/ML</b>, with
+                  a focus on <b>R&D and innovative technologies</b>
+                </li>
+                <li>
+                  🎮 Passionate about <b>gaming</b> and exploring technologies
+                  that push boundaries
+                </li>
+                <li>
+                  🎨 Outside of coding, enjoy <b>DJing, video editing</b>, and
+                  bringing creative projects to life
+                </li>
+              </ul>
+
               <hr className="border-t border-white my-6" />
               <div>
                 <h4 className="text-body text-left font-mono text-xs lg:text-left leading-loose text-muted-foreground">
