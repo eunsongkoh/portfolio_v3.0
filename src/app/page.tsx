@@ -7,10 +7,10 @@ import Resume from "@/components/sections/Resume";
 
 export default function Home() {
   return (
-    <main className="max-w-xl mx-auto px-6">
+    <main className="max-w-2xl mx-auto px-6">
       <Hero />
-      <About />
       <Experience />
+      <About />
       <Projects />
       <Contact />
       <Resume />

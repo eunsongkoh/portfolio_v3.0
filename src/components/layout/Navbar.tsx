@@ -5,8 +5,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "about", href: "#about" },
   { name: "experience", href: "#experience" },
+  { name: "about", href: "#about" },
   { name: "projects", href: "#projects" },
   { name: "contact", href: "#contact" },
   { name: "resume", href: "#resume" },
@@ -19,7 +19,7 @@ export default function Navbar() {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
-      const offset = 80; // height of navbar + padding
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -37,7 +37,7 @@ export default function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 border-b border-portfolio-border",
-        "bg-portfolio-black/80 backdrop-blur-[20px]"
+        "bg-portfolio-black/20 backdrop-blur-[20px]"
       )}
     >
       <div className="max-w-xl mx-auto px-6 h-[60px] flex justify-between items-center">
