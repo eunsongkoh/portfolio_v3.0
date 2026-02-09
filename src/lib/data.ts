@@ -2,6 +2,7 @@ export interface Experience {
   id: string;
   title: string;
   company: string;
+  companyUrl?: string; // Added companyUrl
   period: string;
   description: string;
   location: string;
@@ -52,41 +53,56 @@ export const experienceData: Experience[] = [
     id: "exp-1",
     title: "Applied Research Engineer (AI & Security)",
     company: "Safety Cybersecurity",
-    period: "Jan 2026",
+    companyUrl: "https://www.getsafety.com/vulnerability-database",
+    period: "Jan 2026 - Present",
     location: "Vancouver, BC",
-    description: "Incoming Applied Research Engineer",
+    description: "Applied research on AI/ML methods for vulnerability detection in cybersecurity systems ",
   },
   {
     id: "exp-2",
+    title: "Undergraduate Research Assistant",
+    company: "Simon Fraser University | Reliable Systems Lab",
+    companyUrl: "https://github.com/sfu-rsl",
+    period: "Jan 2026 - Apr 2026",
+    location: "Vancouver, BC",
+    description: "LLM based automatic vulnerability discovery & repair",
+    techStack: "Python, HuggingFace, Prompt Engineering"
+  },
+  {
+    id: "exp-3",
     title: "Software Engineer Intern",
     company: "Safety Cybersecurity",
+    companyUrl: "https://www.getsafety.com/vulnerability-database",
     period: "Apr 2025 - Dec 2025",
     location: "Vancouver, BC",
     description: "AI & Security R&D, full-stack development, ML vulnerability detection",
     techStack: "React, Distributed Training, HuggingFace, LangSmith/LangChain",
   },
   {
-    id: "exp-3",
+    id: "exp-4",
     title: "Undergraduate Research Assistant",
     company: "Simon Fraser University | Reliable Systems Lab",
+    companyUrl: "https://github.com/sfu-rsl",
     period: "Apr 2025 - Aug 2025",
     location: "Vancouver, BC",
     description: "Co-authored research, LLM vulnerability discovery & repair",
     techStack: "Rust, Python, Prompt Engineering",
   },
   {
-    id: "exp-4",
+    id: "exp-5",
     title: "Software Developer + Product Manager",
     company: "Simon Fraser University | Hope Health Action CBR Team",
+    companyUrl: "https://play.google.com/store/apps/details?id=org.hopehealthaction.cbrapp&hl=en_CA",
     period: "Jan 2025 - Apr 2025",
     location: "Vancouver, BC",
     description: "Full-stack development, dashboards & mobile features, backend refactoring",
     techStack: "React, React Native, Django, PostgreSQL, Figma",
   },
   {
-    id: "exp-5",
+    id: "exp-6",
     title: "Software Engineer Intern",
     company: "Kelowna Software Ltd.",
+    companyUrl: "https://www.kelownasoftware.com/",
     period: "Apr 2024 - Aug 2024",
     location: "Remote",
     description: "Legacy system optimization, ML pipelines, backend & client features",
