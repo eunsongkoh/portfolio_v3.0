@@ -39,22 +39,31 @@ export interface About {
 export const aboutData: About = {
   name: "Eunsong Koh",
   title: "$ hello world, i'm Song",
-  bio: "- Applied Research (Security + AI/ML) @ Safety Cybersecurity - 4th Year Computer Science Student @ Simon Fraser University - Background in Fullstack Development, AI/ML + Security Research - Interests in Security, AI/ML, Distributed Systems, and R&D - SFU DNS Club Director of Comm. + Multimedia, SFU WiCS Mentor and Workshop Host",
+  bio: "- Incoming Machine Learning Engineer Intern @ Amazon, previously Applied Researcher (Security + AI/ML) @ Safety Cybersecurity - 4th Year Computer Science Student @ Simon Fraser University - Background in Applied AI, LLMs, Fullstack Development, and Security Research - Interests in Security, AI/ML, Distributed Systems, and R&D - SFU DNS Club Director of Comm. + Multimedia, SFU WiCS Mentor and Workshop Host",
   photoUrl: "/profile.jpg",
   graduation: "April 2027",
   coursework: "Systems Programming, Database Systems, Data Structures and Algorithms, Networking, Data Science, Web Development",
-  internship_availability: "Summer 2026",
+  internship_availability: "Fall 2026",
   ng_availability: "Summer 2027",
   resumeUrl: "/resume.pdf",
 };
 
 export const experienceData: Experience[] = [
   {
+    id: "exp-0",
+    title: "Machine Learning Engineer Intern",
+    company: "Amazon",
+    companyUrl: "",
+    period: "May 2026 - Jul 2026",
+    location: "Vancouver, BC",
+    description: "Incoming Summer 2026",
+  },
+  {
     id: "exp-1",
     title: "Applied Research Engineer (AI & Security)",
     company: "Safety Cybersecurity",
     companyUrl: "https://www.getsafety.com/vulnerability-database",
-    period: "Jan 2026 - Present",
+    period: "Jan 2026 - Apr 2026",
     location: "Vancouver, BC",
     description: "Applied research on AI/ML methods for vulnerability detection in cybersecurity systems ",
   },
