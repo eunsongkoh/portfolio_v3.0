@@ -1,57 +1,79 @@
+import Image from "next/image";
 import { aboutData } from "@/lib/data";
 import Section from "@/components/ui/Section";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function About() {
   return (
-    <Section id="about" title="about">
-      <ScrollReveal animation="fade">
-        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-          <div className="text-[1em] leading-[1.7] text-portfolio-gray max-w-[500px] flex-1">
-            {aboutData.bio.includes("-") ? (
-              <ul className="list-none flex flex-col gap-2">
-                {aboutData.bio
-                  .split("-")
-                  .map((item) => item.trim())
-                  .filter((item) => item.length > 0)
-                  .map((item, index) => (
-                    <li key={index} className="flex gap-2">
-                      <span>-</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-              </ul>
-            ) : (
-              <p className="lowercase">{aboutData.bio}</p>
-            )}
-
-            <div className="mt-8 space-y-4">
-              <p className="lowercase">
-                <span className="text-portfolio-white/90">expected graduation: </span>
-                {aboutData.graduation}
-              </p>
-              <p className="lowercase">
-                <span className="text-portfolio-white/90">coursework:</span> {aboutData.coursework}
-              </p>
-              <p className="lowercase">
-                <span className="text-portfolio-white/90">internship availability:</span> {aboutData.internship_availability}
-              </p>
-              <p className="lowercase">
-                <span className="text-portfolio-white/90">new-grad availability:</span> {aboutData.ng_availability}
-              </p>
-            </div>
+    <Section id="about" number="02" title="About">
+      <div className="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-11">
+        <ScrollReveal>
+          <div className="relative w-[160px] h-[160px] border border-border overflow-hidden">
+            <Image
+              src={aboutData.photoUrl}
+              alt={aboutData.name}
+              fill
+              sizes="160px"
+              className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+            />
           </div>
-          {aboutData.photoUrl && (
-            <div className="w-full md:w-[200px] flex-shrink-0">
-              <img
-                src={aboutData.photoUrl}
-                alt={aboutData.name}
-                className="w-full h-auto rounded-lg grayscale hover:grayscale-0 transition-all duration-500"
-              />
+        </ScrollReveal>
+
+        <div>
+          <ScrollReveal delay={100}>
+            <div className="flex flex-col gap-2.5 text-base leading-[1.7]">
+              {aboutData.bio.map((line, index) => (
+                <div key={index} className="flex gap-2.5">
+                  <span className="text-muted">—</span>
+                  <span>{line}</span>
+                </div>
+              ))}
             </div>
-          )}
+          </ScrollReveal>
+
+          <ScrollReveal delay={200}>
+            <div className="my-6 md:my-7">
+              <div className="border border-border divide-y divide-border font-mono text-xs">
+                {[
+                  { label: "expected graduation", value: aboutData.graduation },
+                  { label: "internship availability", value: aboutData.internship_availability },
+                  { label: "new-grad availability", value: aboutData.ng_availability },
+                  { label: "looking for", value: aboutData.lookingFor },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="group flex flex-wrap justify-between gap-2 px-4 py-3 transition-colors duration-300 hover:bg-fg/5 cursor-default"
+                  >
+                    <span className="text-muted transition-colors duration-300 group-hover:text-fg">
+                      {stat.label}
+                    </span>
+                    <span className="text-fg text-right">{stat.value}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="font-mono text-xs text-muted mt-4">
+                coursework: <span className="text-fg">{aboutData.coursework}</span>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <div className="flex flex-wrap gap-2.5">
+              {aboutData.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="font-mono text-xs px-3 py-1.5 border border-fg/60 transition-colors duration-300 hover:bg-fg hover:text-bg hover:border-fg cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {/* TODO: Selected Work / Projects block — see TODO in src/lib/data.ts
+              for the data shape once new project content is ready. */}
         </div>
-      </ScrollReveal>
+      </div>
     </Section>
   );
-}   
+}

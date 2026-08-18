@@ -2,19 +2,10 @@ export interface Experience {
   id: string;
   title: string;
   company: string;
-  companyUrl?: string; // Added companyUrl
+  companyUrl?: string;
   period: string;
   description: string;
   location: string;
-  techStack?: string;
-}
-
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  techStack: string[];
-  link: string;
 }
 
 export interface ContactItem {
@@ -26,26 +17,41 @@ export interface ContactItem {
 
 export interface About {
   name: string;
-  title: string;
-  bio: string;
+  bio: string[];
   photoUrl: string;
   graduation: string;
   coursework: string;
   internship_availability: string;
   ng_availability: string;
+  lookingFor: string;
   resumeUrl: string;
+  skills: string[];
 }
 
 export const aboutData: About = {
   name: "Eunsong Koh",
-  title: "$ hello world, i'm Song",
-  bio: "- Incoming Machine Learning Engineer Intern @ Amazon, previously Applied Researcher (Security + AI/ML) @ Safety Cybersecurity - 4th Year Computer Science Student @ Simon Fraser University - Background in Applied AI, LLMs, Fullstack Development, and Security Research - Interests in Security, AI/ML, Distributed Systems, and R&D - SFU DNS Club Director of Comm. + Multimedia, SFU WiCS Mentor and Workshop Host",
+  bio: [
+    "Final Year Computer Science Student @ Simon Fraser University",
+    "SFU DNS Club Growth and Marketing Lead, SFU WiCS Mentor and Workshop Host",
+    "Bedroom Drum & Bass DJ",
+  ],
   photoUrl: "/profile.jpg",
   graduation: "April 2027",
-  coursework: "Systems Programming, Database Systems, Data Structures and Algorithms, Networking, Data Science, Web Development",
+  coursework:
+    "Database Systems, Systems Programming, Networking, Computational Data Science, Data Structures & Algorithms",
   internship_availability: "Fall 2026",
   ng_availability: "Summer 2027",
+  lookingFor: "Machine Learning Engineer, Software Engineer, Data Engineer roles",
   resumeUrl: "/resume.pdf",
+  skills: [
+    "Applied AI/ML",
+    "LLM Systems & Agents",
+    "Security & Vulnerability Research",
+    "Distributed Systems",
+    "Cloud & Serverless Architecture",
+    "Full-Stack Development",
+    "Data Engineering",
+  ],
 };
 
 export const experienceData: Experience[] = [
@@ -53,95 +59,56 @@ export const experienceData: Experience[] = [
     id: "exp-0",
     title: "Machine Learning Engineer Intern",
     company: "Amazon",
-    companyUrl: "",
     period: "May 2026 - Jul 2026",
     location: "Vancouver, BC",
-    description: "Incoming Summer 2026",
+    description:
+      "Architected a production serverless ML pipeline for automated tax classification, cutting cycle time 90% across millions of marketplace products",
   },
   {
     id: "exp-1",
     title: "Applied Research Engineer (AI & Security)",
-    company: "Safety Cybersecurity",
+    company: "Safety CLI Cybersecurity",
     companyUrl: "https://www.getsafety.com/vulnerability-database",
     period: "Jan 2026 - Apr 2026",
     location: "Vancouver, BC",
-    description: "Applied research on AI/ML methods for vulnerability detection in cybersecurity systems ",
+    description:
+      "Redesigned vulnerability analysis into a distributed graph pipeline (5x throughput) and improved LLM classification precision from 28% to 78%",
   },
   {
     id: "exp-2",
-    title: "Undergraduate Research Assistant",
+    title: "Undergraduate Researcher",
     company: "Simon Fraser University | Reliable Systems Lab",
     companyUrl: "https://github.com/sfu-rsl",
-    period: "Jan 2026 - Apr 2026",
+    period: "May 2025 - Apr 2026",
     location: "Vancouver, BC",
-    description: "LLM based automatic vulnerability discovery & repair",
-    techStack: "Python, HuggingFace, Prompt Engineering"
+    description:
+      "Co-authored research on agentic automated vulnerability discovery & repair, submitted to NeurIPS 2026, and benchmarked LLMs on Rust vulnerability detection",
   },
   {
     id: "exp-3",
     title: "Software Engineer Intern",
-    company: "Safety Cybersecurity",
+    company: "Safety CLI Cybersecurity",
     companyUrl: "https://www.getsafety.com/vulnerability-database",
-    period: "Apr 2025 - Dec 2025",
+    period: "May 2025 - Dec 2025",
     location: "Vancouver, BC",
-    description: "AI & Security R&D, full-stack development, ML vulnerability detection",
-    techStack: "React, Distributed Training, HuggingFace, LangSmith/LangChain",
+    description:
+      "Built an ML-powered data classification pipeline (90%+ accuracy) and a full-stack vulnerability analysis platform (FastAPI + React), cutting security review time 4x",
   },
   {
     id: "exp-4",
-    title: "Undergraduate Research Assistant",
-    company: "Simon Fraser University | Reliable Systems Lab",
-    companyUrl: "https://github.com/sfu-rsl",
-    period: "Apr 2025 - Aug 2025",
-    location: "Vancouver, BC",
-    description: "Co-authored research, LLM vulnerability discovery & repair",
-    techStack: "Rust, Python, Prompt Engineering",
-  },
-  {
-    id: "exp-5",
-    title: "Software Developer + Product Manager",
-    company: "Simon Fraser University | Hope Health Action CBR Team",
-    companyUrl: "https://play.google.com/store/apps/details?id=org.hopehealthaction.cbrapp&hl=en_CA",
-    period: "Jan 2025 - Apr 2025",
-    location: "Vancouver, BC",
-    description: "Full-stack development, dashboards & mobile features, backend refactoring",
-    techStack: "React, React Native, Django, PostgreSQL, Figma",
-  },
-  {
-    id: "exp-6",
     title: "Software Engineer Intern",
     company: "Kelowna Software Ltd.",
     companyUrl: "https://www.kelownasoftware.com/",
-    period: "Apr 2024 - Aug 2024",
+    period: "May 2024 - Aug 2024",
     location: "Remote",
-    description: "Legacy system optimization, ML pipelines, backend & client features",
-    techStack: ".NET Core, Angular, Pandas, Dask",
+    description:
+      "Developed backend systems in C#/.NET Core and client-facing TypeScript/Angular features for 1000+ users",
   },
 ];
 
-export const projectsData: Project[] = [
-  {
-    id: "proj-1",
-    title: "ubc nwHacks 2025: Mood Mirror",
-    description: "Cross-platform Swift application for real-time emotion prediction using live camera and video calls",
-    techStack: ["Swift", "SwiftUI", "Python", "Flask"],
-    link: "https://devpost.com/software/moodmirror",
-  },
-  {
-    id: "proj-3",
-    title: "hack the north 2025: vybes",
-    description: "Real-time crowd sentiment–driven music recommendation system with live analytics",
-    techStack: ["python", "aws", "nextjs", "opencv", "grok api", "supabase"],
-    link: "https://devpost.com/software/vybe-12bzfd",
-  },
-  {
-    id: "proj-2",
-    title: "TaxMe",
-    description: "Real-time grocery budgeting app with tax-inclusive cart calculations and AI recipe recommendations",
-    techStack: ["springboot", "nextjs", "redux", "azure sql server"],
-    link: "https://github.com/eunsongkoh/tax-me",
-  },
-];
+// TODO: Re-add a `Project` interface and `projectsData` array here once new
+// project content is ready, then wire up a <Projects/> section in page.tsx
+// between <About/> and <Contact/>.
 
 export const contactData: ContactItem[] = [
   {
@@ -153,13 +120,13 @@ export const contactData: ContactItem[] = [
   {
     id: "contact-2",
     label: "github",
-    link: "#",
+    link: "https://github.com/eunsongkoh",
     display: "github.com/eunsongkoh",
   },
   {
     id: "contact-3",
     label: "linkedin",
-    link: "#",
+    link: "https://linkedin.com/in/songkoh",
     display: "linkedin.com/in/songkoh",
   },
 ];
