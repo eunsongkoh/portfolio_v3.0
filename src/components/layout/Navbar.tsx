@@ -1,15 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { aboutData } from "@/lib/data";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "experience", href: "#experience" },
-  { name: "about", href: "#about" },
-  { name: "projects", href: "#projects" },
-  { name: "contact", href: "#contact" },
-  { name: "resume", href: "#resume" },
+  { name: "Experience", href: "#experience" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -19,14 +18,13 @@ export default function Navbar() {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
-      const offset = 80;
+      const offset = 64;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
 
       window.scrollTo({
-        top: offsetPosition,
+        top: elementPosition - offset,
         behavior: "smooth",
       });
       setIsMobileMenuOpen(false);
@@ -34,44 +32,58 @@ export default function Navbar() {
   };
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 border-b border-portfolio-border",
-        "bg-portfolio-black/20 backdrop-blur-[20px]"
-      )}
-    >
-      <div className="max-w-xl mx-auto px-6 h-[60px] flex justify-between items-center">
-        <Link
-          href="#"
-          onClick={(e) => handleScrollToSection(e, "#")}
-          className="font-semibold text-[1.1em] lowercase text-portfolio-white hover:text-portfolio-white/70 transition-opacity"
-        >
-          song
-        </Link>
+    <nav className="sticky top-0 z-[1000] flex items-center gap-10 px-6 md:px-16 h-[64px] font-mono text-[13px] text-muted border-b border-border bg-bg">
+      <a
+        href="#"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+        className="text-fg font-bold"
+      >
+        Song
+      </a>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex gap-8 list-none">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                onClick={(e) => handleScrollToSection(e, link.href)}
-                className="text-portfolio-white text-[0.95em] lowercase transition-opacity hover:opacity-70"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div className="flex-1" />
 
-        {/* Mobile Navigation Toggle */}
+      {/* Desktop Navigation */}
+      <ul className="hidden md:flex items-center gap-10 list-none">
+        {navLinks.map((link) => (
+          <li key={link.name}>
+            <a
+              href={link.href}
+              onClick={(e) => handleScrollToSection(e, link.href)}
+              className="hover:opacity-70 transition-opacity"
+            >
+              {link.name}
+            </a>
+          </li>
+        ))}
+        <li>
+          <a
+            href={aboutData.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-fg hover:opacity-70 transition-opacity"
+          >
+            Resume ↗
+          </a>
+        </li>
+        <li className="flex items-center">
+          <ThemeToggle />
+        </li>
+      </ul>
+
+      {/* Mobile Navigation Toggle */}
+      <div className="flex md:hidden items-center gap-5">
+        <ThemeToggle />
         <button
-          className="md:hidden text-portfolio-white focus:outline-none"
+          className="text-fg focus:outline-none"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
           <svg
-            className="w-6 h-6"
+            className="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -81,14 +93,14 @@ export default function Navbar() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={1.5}
                 d="M6 18L18 6M6 6l12 12"
               />
             ) : (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={1.5}
                 d="M4 6h16M4 12h16M4 18h16"
               />
             )}
@@ -98,17 +110,29 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-portfolio-black border-t border-portfolio-border absolute w-full left-0 top-[60px] px-6 py-6 flex flex-col gap-4">
+        <div
+          className={cn(
+            "md:hidden bg-bg border-t border-border absolute w-full left-0 top-[64px] px-6 py-6 flex flex-col gap-4"
+          )}
+        >
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleScrollToSection(e, link.href)}
-              className="text-portfolio-white text-[1.1em] lowercase py-2 block hover:opacity-70"
+              className="py-1"
             >
               {link.name}
             </a>
           ))}
+          <a
+            href={aboutData.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-fg py-1"
+          >
+            Resume ↗
+          </a>
         </div>
       )}
     </nav>

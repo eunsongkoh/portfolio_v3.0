@@ -2,26 +2,34 @@ import { cn } from "@/lib/utils";
 
 interface SectionProps {
   id: string;
-  title?: string;
+  number: string;
+  title: string;
   children: React.ReactNode;
   className?: string;
+  lastSection?: boolean;
 }
 
-export default function Section({ id, title, children, className }: SectionProps) {
+export default function Section({
+  id,
+  number,
+  title,
+  children,
+  className,
+  lastSection = false,
+}: SectionProps) {
   return (
     <section
       id={id}
       className={cn(
-        "py-[60px] border-t border-portfolio-border",
+        "py-16 md:py-20 grid grid-cols-1 md:grid-cols-[160px_1fr] gap-6 md:gap-0",
+        !lastSection && "border-b border-border",
         className
       )}
     >
-      {title && (
-        <h2 className="text-[1.5em] md:text-[2em] font-semibold mb-10 tracking-[-0.5px] lowercase text-portfolio-white">
-          {title}
-        </h2>
-      )}
-      {children}
+      <div className="font-mono text-[13px] text-muted">
+        ({number}) {title}
+      </div>
+      <div>{children}</div>
     </section>
   );
 }
