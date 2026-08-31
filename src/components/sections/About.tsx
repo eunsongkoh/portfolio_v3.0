@@ -34,39 +34,35 @@ export default function About() {
           <ScrollReveal delay={200}>
             <div className="my-6 md:my-7">
               <div className="border border-border divide-y divide-border font-mono text-xs">
-                {[
-                  { label: "expected graduation", value: aboutData.graduation },
-                  { label: "internship availability", value: aboutData.internship_availability },
-                  { label: "new-grad availability", value: aboutData.ng_availability },
-                  { label: "looking for", value: aboutData.lookingFor },
-                ].map((stat) => (
+                {(
+                  [
+                    { label: "expected graduation", value: aboutData.graduation },
+                    { label: "internship availability", value: aboutData.internship_availability },
+                    { label: "new-grad availability", value: aboutData.ng_availability },
+                    { label: "looking for", value: aboutData.lookingFor },
+                  ] as { label: string; value: string | string[] }[]
+                ).map((stat) => (
                   <div
                     key={stat.label}
                     className="group flex flex-wrap justify-between gap-2 px-4 py-3 transition-colors duration-300 hover:bg-fg/5 cursor-default"
                   >
-                    <span className="text-muted transition-colors duration-300 group-hover:text-fg">
-                      {stat.label}
+                    <span className="text-fg transition-colors duration-300">{stat.label}</span>
+                    <span className="text-fg flex flex-wrap justify-end gap-1.5 max-w-full">
+                      {(Array.isArray(stat.value) ? stat.value : [stat.value]).map((v) => (
+                        <span
+                          key={v}
+                          className="font-mono text-xs px-3 py-1.5 rounded-full border border-fg/60 transition-colors duration-300 hover:bg-fg hover:text-bg hover:border-fg cursor-default"
+                        >
+                          {v}
+                        </span>
+                      ))}
                     </span>
-                    <span className="text-fg text-right">{stat.value}</span>
                   </div>
                 ))}
               </div>
-              <div className="font-mono text-xs text-muted mt-4">
+              <div className="font-mono text-xs text-fg mt-4">
                 coursework: <span className="text-fg">{aboutData.coursework}</span>
               </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={300}>
-            <div className="flex flex-wrap gap-2.5">
-              {aboutData.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="font-mono text-xs px-3 py-1.5 border border-fg/60 transition-colors duration-300 hover:bg-fg hover:text-bg hover:border-fg cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
             </div>
           </ScrollReveal>
 

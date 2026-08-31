@@ -6,6 +6,10 @@ export interface Experience {
   period: string;
   description: string;
   location: string;
+  paperTitle?: string;
+  paperVenue?: string;
+  paperStatus?: string;
+  paperUrl?: string;
 }
 
 export interface ContactItem {
@@ -23,7 +27,7 @@ export interface About {
   coursework: string;
   internship_availability: string;
   ng_availability: string;
-  lookingFor: string;
+  lookingFor: string[];
   resumeUrl: string;
   skills: string[];
 }
@@ -41,7 +45,12 @@ export const aboutData: About = {
     "Database Systems, Systems Programming, Networking, Computational Data Science, Data Structures & Algorithms",
   internship_availability: "Fall 2026",
   ng_availability: "Summer 2027",
-  lookingFor: "Machine Learning Engineer, Software Engineer, Data Engineer roles",
+  lookingFor: [
+    "Machine Learning Engineer",
+    "Software Engineer",
+    "Data Engineer",
+    "Research/Applied Research Engineer",
+  ],
   resumeUrl: "/resume.pdf",
   skills: [
     "Applied AI/ML",
@@ -78,11 +87,16 @@ export const experienceData: Experience[] = [
     id: "exp-2",
     title: "Undergraduate Researcher",
     company: "Simon Fraser University | Reliable Systems Lab",
-    companyUrl: "https://github.com/sfu-rsl",
+    companyUrl: "https://sfu-rsl.github.io/rust-mizan/",
     period: "May 2025 - Apr 2026",
     location: "Vancouver, BC",
     description:
       "Co-authored research on agentic automated vulnerability discovery & repair, submitted to NeurIPS 2026, and benchmarked LLMs on Rust vulnerability detection",
+    paperTitle:
+      "RustMizan: A Compilable, Contamination-Aware Benchmarking Framework for Rust Vulnerabilities",
+    paperVenue: "NeurIPS 2026",
+    paperStatus: "submitted",
+    paperUrl: "https://arxiv.org/abs/2607.04729",
   },
   {
     id: "exp-3",
