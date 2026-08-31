@@ -15,6 +15,16 @@ export default function Home() {
             </span>
           ))}
         </h1>
+        <div className="flex flex-wrap gap-2 mt-4 max-w-[480px]">
+          {aboutData.skills.map((skill) => (
+            <span
+              key={skill}
+              className="font-mono text-[11px] px-2.5 py-1 rounded-full border border-fg/60 transition-colors duration-300 hover:bg-fg hover:text-bg hover:border-fg cursor-default"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
         <ContactLinks className="mt-4" />
         <a
           href={aboutData.resumeUrl}
